@@ -1,0 +1,604 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>帮助</title>
+		<meta charset='utf-8'>
+		<!-- 优先使用 IE 最新版本和 Chrome -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<!-- 页面描述 -->
+		<meta name="description" content="小虫直播，最温暖的微信直播平台~" />
+		<!-- 页面关键词 -->
+		<meta name="" content="darlings" />
+		<!-- 网页作者 -->
+		<meta name="author" content="yhctech,liubofu@yhctech.com" />
+		<!-- 搜索引擎抓取 -->
+		<meta name="robots" content="index,follow" />
+		<!-- 为移动设备添加 viewport -->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<!-- `width=device-width` 会导致 iPhone 5 添加到主屏后以 WebApp 全屏模式打开页面时出现黑边 http://bigc.at/ios-webapp-viewport-meta.orz -->
+
+		<!-- iOS 设备 begin -->
+		<meta name="apple-mobile-web-app-title" content="简约">
+		<!-- 添加到主屏后的标题（iOS 6 新增） -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+
+		<!--<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">-->
+		<!-- 添加智能 App 广告条 Smart App Banner（iOS 6+ Safari） -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no" />
+		<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 不让百度转码 -->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- iOS 图标 begin -->
+		<!--<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png"/>-->
+		<!-- iPhone 和 iTouch，默认 57x57 像素，必须有 -->
+		<!--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png"/>-->
+		<!-- Retina iPhone 和 Retina iTouch，114x114 像素，可以没有，但推荐有 -->
+		<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144-precomposed.png"/>-->
+		<!-- Retina iPad，144x144 像素，可以没有，但推荐有 -->
+		<!-- iOS 图标 end -->
+
+		<!-- iOS 启动画面 begin -->
+		<!--<link rel="apple-touch-startup-image" sizes="768x1004" href="/splash-screen-768x1004.png"/>-->
+		<!-- iPad 竖屏 768 x 1004（标准分辨率） -->
+		<!--<link rel="apple-touch-startup-image" sizes="1536x2008" href="/splash-screen-1536x2008.png"/>-->
+		<!-- iPad 竖屏 1536x2008（Retina） -->
+		<!--<link rel="apple-touch-startup-image" sizes="1024x748" href="/Default-Portrait-1024x748.png"/>-->
+		<!-- iPad 横屏 1024x748（标准分辨率） -->
+		<!--<link rel="apple-touch-startup-image" sizes="2048x1496" href="/splash-screen-2048x1496.png"/>-->
+		<!-- iPad 横屏 2048x1496（Retina） -->
+
+		<!--<link rel="apple-touch-startup-image" href="/splash-screen-320x480.png"/>-->
+		<!-- iPhone/iPod Touch 竖屏 320x480 (标准分辨率) -->
+		<!--<link rel="apple-touch-startup-image" sizes="640x960" href="/splash-screen-640x960.png"/>-->
+		<!-- iPhone/iPod Touch 竖屏 640x960 (Retina) -->
+		<!--<link rel="apple-touch-startup-image" sizes="640x1136" href="/splash-screen-640x1136.png"/>-->
+		<!-- iPhone 5/iPod Touch 5 竖屏 640x1136 (Retina) -->
+		<!-- iOS 启动画面 end -->
+
+		<!-- iOS 设备 end -->
+		<!--<meta name="msapplication-TileColor" content="#000"/>-->
+		<!-- Windows 8 磁贴颜色 -->
+		<!--<meta name="msapplication-TileImage" content="icon.png"/>-->
+		<!-- Windows 8 磁贴图标 -->
+		<script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+		<script src="http://static.yhctech.com/frontend/js/add.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="http://static.yhctech.com/frontend/css/commes.css" />
+		<link rel="stylesheet" href="http://static.yhctech.com/frontend/css/photoswipe.css">
+		<link rel="stylesheet" href="http://static.yhctech.com/frontend/css/default-skin.css">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			header {
+				width: 100%;
+				box-sizing: border-box;
+				height: 3rem;
+				background: url(http://static.yhctech.com/frontend/img/wxrb_register_helpTitle.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			body {
+				width: 100%;
+				height: 30.15rem;
+				overflow-y: scroll;
+				font-family: "微软雅黑";
+				color: rgb(50, 50, 50);
+			}
+			
+			.wrap {
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0 0.5rem 1.75rem;
+				background-color: #FFFFFF;
+				position: relative;
+			}
+			
+			.img-blow {
+				display: none;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+			
+			.border-bottom {
+				border-bottom: 1px solid #999999;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.font-strong {
+				font-weight: bolder;
+			}
+			
+			.wrap h1 {
+				font-size: 1rem;
+				line-height: 1.5rem;
+				padding-top: 0.5rem;
+			}
+			
+			.wrap i {
+				display: block;
+				width: 0.75rem;
+				height: 0.2rem;
+				background-color: #3C538E;
+			}
+			
+			.wrap .flow-cont {
+				margin-top: 0.75rem;
+				font-size: 0.75rem;
+				padding-bottom: 0.5rem;
+			}
+			
+			.wrap .flow-cont .text {
+				line-height: 1rem;
+				padding: 0.3rem 0 0;
+			}
+			
+			.wrap .flow-cont h2 {
+				font-size: 0.75rem;
+				line-height: 1.25rem;
+			}
+			
+			.wrap .flow-cont .theory>li {
+				font-size: 0.75rem;
+				line-height: 1.25rem;
+				overflow: hidden;
+			}
+			
+			.wrap .flow-cont .theory>li>img {
+				display: block;
+				width: 0.675rem;
+				height: 0.675rem;
+				float: left;
+				margin-top: 0.35rem;
+			}
+			
+			.wrap .flow-cont .theory>li>span {
+				display: block;
+				float: left;
+				margin-left: 0.25rem;
+			}
+			
+			.wrap .step .theory>li {
+				margin-bottom: 0.7rem;
+			}
+			
+			.wrap .step .theory>li>img {
+				margin-top: 0.25rem;
+			}
+			
+			.wrap .step .theory>li>.img-max {
+				visibility: hidden;
+				margin-left: 0.25rem;
+				width: 7.25rem;
+				height: 12.825rem;
+			}
+			
+			.wrap .step .theory>li>span {
+				margin-left: 0.75rem;
+				width: 8.75rem;
+				float: right;
+			}
+			
+			fooder {
+				font-size: 0.75rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header></header>
+		<div class="wrap">
+			<div class="my-gallery">
+				<figure>
+					<a href="http://static.yhctech.com/frontend/img/wxrb_register_max1.jpg" data-size="800x1142">
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_max1.jpg" />
+					</a>
+				</figure>
+
+				<figure>
+					<a href="http://static.yhctech.com/frontend/img/wxrb_register_max2.jpg" data-size="800x1142">
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_max2.jpg" />
+					</a>
+				</figure>
+				<figure>
+					<a href="http://static.yhctech.com/frontend/img/wxrb_register_max3.jpg" data-size="800x1142">
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_max3.jpg" />
+					</a>
+				</figure>
+				<figure>
+					<a href="http://static.yhctech.com/frontend/img/wxrb_register_max4.jpg" data-size="800x1142">
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_max4.jpg" />
+					</a>
+				</figure>
+				<figure>
+					<a href="http://static.yhctech.com/frontend/img/wxrb_register_max5.jpg" data-size="800x1142">
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_max5.jpg" />
+					</a>
+				</figure>
+			</div>
+			<div class="flow border-bottom">
+				<h1>微信解除手机号绑定流程：</h1>
+				<i></i>
+				<div class="flow-cont">
+					<p>
+						同一手机号能够反复注册多个微信，据现在获得的信息表明每个手机号每年可以注册3个微信号：
+					</p>
+					<p class="font-strong text">
+						一个月、三个月、六个月。
+					</p>
+				</div>
+			</div>
+			<div class="flow-cont border-bottom">
+				<h2>原理：</h2>
+				<ul class="theory">
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_1.png" />
+						<span>手机号注册微信: 绑定QQ,设置“微信号”。</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_2.png" />
+						<span>解绑手机号。 </span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_3.png" />
+						<span>注册新微信: 绑定QQ或邮箱,设置“微信号”。</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_4.png" />
+						<span>解绑手机号。 </span>
+					</li>
+			</div>
+			<div class="flow-cont step">
+				<h2>具体步骤：</h2>
+				<ul class="theory">
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_1.png" />
+						<img class="img-max" index="0" src="http://static.yhctech.com/frontend/img/wxrb_register_max1.jpg" />
+						<span>
+							登录已经绑定了手机号的微信，点击 <span class="font-strong">我, 设置。</span>
+						</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_2.png" />
+						<img class="img-max" index="1" src="http://static.yhctech.com/frontend/img/wxrb_register_max2.jpg" />
+						<span>
+							点击 <span class="font-strong"> 设置，</span>进入<span class="font-strong"> 帐号与安全  </span> 界面。
+						</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_3.png" />
+						<img class="img-max" index="2" src="http://static.yhctech.com/frontend/img/wxrb_register_max3.jpg" />
+						<span>
+							再点击  <span class="font-strong"> 帐号与安全，</span> 出现以下界面，请确保你已经绑定了 <span class="font-strong"> QQ号 </span>或设置<span class="font-strong"> 微信号、邮箱地址  </span>（如图中所示的红框部分，三个至少有两个），如果没有请先点击<span class="font-strong"> QQ号 </span>或<span class="font-strong"> 微信号、邮箱地址 </span>进行设置。
+						</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_4.png" />
+						<img class="img-max" index="3" src="http://static.yhctech.com/frontend/img/wxrb_register_max4.jpg" />
+						<span>
+							以上都设置好后，请点击<span class="font-strong"> 手机号</span>，此页面显示你已经绑定的手机号；如果要绑定其它手机号，请点击<span class="font-strong">更换手机号</span>。
+						</span>
+						<span>
+							要解绑当前手机号，请点击右上角的 ┇ 图标。出现<span class="font-strong"> 解绑</span>。
+						</span>
+					</li>
+					<li>
+						<img src="http://static.yhctech.com/frontend/img/wxrb_register_5.png" />
+						<img class="img-max" index="4" src="http://static.yhctech.com/frontend/img/wxrb_register_max5.jpg" />
+						<span>
+							请点击 <span class="font-strong">解绑</span>。
+						</span>
+						<span>
+							此处弹出的提示挺吓人的，如图所示，不用担心。请点击<span class="font-strong"> 解绑或停用</span>。
+						</span>
+					</li>
+				</ul>
+			</div>
+			<fooder>
+				<p>
+					解除绑定的过程有时很慢，请耐心等待；有时会完全没有反应，此时应尝试退出微信后重新登录，再按上述步骤操作。 解除绑定完成后，退出
+				</p>
+				<p>
+					解除绑定完成后，退出微信，开始注册新的微信号。
+				</p>
+				<p class="font-strong">
+					见注册微信图文版
+				</p>
+			</fooder>
+
+		</div>
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="pswp__bg"></div>
+			<div class="pswp__scroll-wrap">
+				<div class="pswp__container">
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+					<div class="pswp__item"></div>
+				</div>
+				<div class="pswp__ui pswp__ui--hidden">
+					<div class="pswp__top-bar">
+						<div class="pswp__counter"></div>
+						<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+						<div class="pswp__preloader">
+							<div class="pswp__preloader__icn">
+								<div class="pswp__preloader__cut">
+									<div class="pswp__preloader__donut"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+						<div class="pswp__share-tooltip"></div>
+					</div>
+					<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+					<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+					<div class="pswp__caption">
+						<div class="pswp__caption__center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="js/photoswipe.min.js"></script>
+	<script src="js/photoswipe_ui_default.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function($) {
+			var initPhotoSwipeFromDOM = function(gallerySelector) {
+				// 解析来自DOM元素幻灯片数据（URL，标题，大小...）
+				// parse slide data (url, title, size ...) from DOM elements 
+				// (children of gallerySelector)
+				var parseThumbnailElements = function(el) {
+					var thumbElements = el.childNodes,
+						numNodes = thumbElements.length,
+						items = [],
+						figureEl,
+						linkEl,
+						size,
+						item;
+
+					for(var i = 0; i < numNodes; i++) {
+
+						figureEl = thumbElements[i]; // <figure> element
+						// 仅包括元素节点
+						// include only element nodes 
+						if(figureEl.nodeType !== 1) {
+							continue;
+						}
+
+						linkEl = figureEl.children[0]; // <a> element
+
+						size = linkEl.getAttribute('data-size').split('x');
+						// 创建幻灯片对象
+						// create slide object
+						item = {
+							src: linkEl.getAttribute('href'),
+							w: parseInt(size[0], 10),
+							h: parseInt(size[1], 10)
+						};
+
+						if(figureEl.children.length > 1) {
+							// <figcaption> content
+							item.title = figureEl.children[1].innerHTML;
+						}
+
+						if(linkEl.children.length > 0) {
+							// <img> thumbnail element, retrieving thumbnail url
+							item.msrc = linkEl.children[0].getAttribute('src');
+						}
+
+						item.el = figureEl; // save link to element for getThumbBoundsFn
+						items.push(item);
+					}
+
+					return items;
+				};
+				// 查找最近的父节点
+				// find nearest parent element
+				var closest = function closest(el, fn) {
+					return el && (fn(el) ? el : closest(el.parentNode, fn));
+				};
+				// 当用户点击缩略图触发
+				// triggers when user clicks on thumbnail
+				var onThumbnailsClick = function(e) {
+					e = e || window.event;
+					e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+					var eTarget = e.target || e.srcElement;
+
+					// find root element of slide
+					var clickedListItem = closest(eTarget, function(el) {
+						return(el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+					});
+
+					if(!clickedListItem) {
+						return;
+					}
+
+					// find index of clicked item by looping through all child nodes
+					// alternatively, you may define index via data- attribute
+					var clickedGallery = clickedListItem.parentNode,
+						childNodes = clickedListItem.parentNode.childNodes,
+						numChildNodes = childNodes.length,
+						nodeIndex = 0,
+						index;
+
+					for(var i = 0; i < numChildNodes; i++) {
+						if(childNodes[i].nodeType !== 1) {
+							continue;
+						}
+
+						if(childNodes[i] === clickedListItem) {
+							index = nodeIndex;
+							break;
+						}
+						nodeIndex++;
+					}
+
+					if(index >= 0) {
+						// open PhotoSwipe if valid index found
+						openPhotoSwipe(index, clickedGallery);
+					}
+					return false;
+				};
+
+				// parse picture index and gallery index from URL (#&pid=1&gid=2)
+				var photoswipeParseHash = function() {
+					var hash = window.location.hash.substring(1),
+						params = {};
+
+					if(hash.length < 5) {
+						return params;
+					}
+
+					var vars = hash.split('&');
+					for(var i = 0; i < vars.length; i++) {
+						if(!vars[i]) {
+							continue;
+						}
+						var pair = vars[i].split('=');
+						if(pair.length < 2) {
+							continue;
+						}
+						params[pair[0]] = pair[1];
+					}
+
+					if(params.gid) {
+						params.gid = parseInt(params.gid, 10);
+					}
+
+					return params;
+				};
+
+				var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+					var pswpElement = document.querySelectorAll('.pswp')[0],
+						gallery,
+						options,
+						items;
+					items = parseThumbnailElements(galleryElement);
+					// 这里可以定义参数
+					// define options (if needed)
+					options = {
+						barsSize: {
+							top: 0,
+							bottom: 0
+						},
+						fullscreenEl: false, // 是否支持全屏按钮
+						shareButtons: [{
+							id: 'wechat',
+							label: '分享微信',
+							url: '#'
+						}, {
+							id: 'weibo',
+							label: '新浪微博',
+							url: '#'
+						}, {
+							id: 'download',
+							label: '保存图片',
+							url: '{{raw_image_url}}',
+							download: true
+						}], // 分享按钮，
+						// define gallery index (for URL)
+						galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+						getThumbBoundsFn: function(index) {
+							// See Options -> getThumbBoundsFn section of documentation for more info
+							var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+								pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+								rect = thumbnail.getBoundingClientRect();
+
+							return {
+								x: rect.left,
+								y: rect.top + pageYScroll,
+								w: rect.width
+							};
+						}
+
+					};
+
+					// PhotoSwipe opened from URL
+					if(fromURL) {
+						if(options.galleryPIDs) {
+							// parse real index when custom PIDs are used 
+							// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+							for(var j = 0; j < items.length; j++) {
+								if(items[j].pid == index) {
+									options.index = j;
+									break;
+								}
+							}
+						} else {
+							// in URL indexes start from 1
+							options.index = parseInt(index, 10) - 1;
+						}
+					} else {
+						options.index = parseInt(index, 10);
+					}
+
+					// exit if index not found
+					if(isNaN(options.index)) {
+						return;
+					}
+
+					if(disableAnimation) {
+						options.showAnimationDuration = 0;
+					}
+					// Pass data to PhotoSwipe and initialize it
+					gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+					gallery.init();
+				};
+
+				// loop through all gallery elements and bind events
+				var galleryElements = document.querySelectorAll(gallerySelector);
+
+				for(var i = 0, l = galleryElements.length; i < l; i++) {
+					galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+					galleryElements[i].onclick = onThumbnailsClick;
+				}
+
+				// Parse URL and open gallery if it contains #&pid=3&gid=1
+				var hashData = photoswipeParseHash();
+				if(hashData.pid && hashData.gid) {
+					openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+				}
+			};
+			// execute above function
+			initPhotoSwipeFromDOM('.my-gallery');
+		})
+	</script>
+
+</html>
